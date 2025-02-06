@@ -108,7 +108,78 @@ span {
     width: 25vw;
     animation: floatImage 4s ease-in-out infinite;
 }
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Full stack developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Frontend Designer";
+    }
+    21%,
+    40%{
+        content: "Data Analyst";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
 
+}
+
+
+/*.data-img img {
+    width: 25vw;
+    animation: floatImage 4s ease-in-out infinite;
+
+}
+*/
 @keyframes floatImage {
     0%{
         transform: translateY(0);
@@ -192,10 +263,10 @@ span {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
-.Services h2 {
+.Skill h2 {
     margin-bottom: 5rem;
 }
-.services-container {
+.skill-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,7 +274,7 @@ span {
     gap: 2rem;
 }
 
-.services-container .services-box {
+.skill-container .skill-box {
     flex: 1 1 30rem;
     background: var(--snd-bg-color);
     padding: 3rem 2rem 4rem;
@@ -212,21 +283,21 @@ span {
     border: 2rem solid var(--bg-color);
     transition: .5s ease;
 }
-.services-container .services-box:hover {
+.skill-container .skill-box:hover {
     border-color: var(--main-color);
     transform: scale(1.02);
 }
 
-.services-box i {
+.skill-box i {
     font-size: 7rem;
     color: var(--main-color);
 }
 
-.services-box h3 {
+.skill-box h3 {
     font-size: 2.6rem;
 }
 
-.services-box p {
+.skill-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
 }
@@ -503,3 +574,8 @@ span {
         width: 100%;
     }
 } 
+
+.img  {
+ width: 30px;
+ transition: transform 0.3s ease-in-out;
+}
